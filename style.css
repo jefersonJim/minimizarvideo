@@ -1,0 +1,122 @@
+:host {
+  font-family: system-ui;
+  min-height: 44px;
+  overflow: visible;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 68px;
+  z-index: 2147483647;
+}
+.container {
+  clip: rect(0px, 10000px, 44px, 0px);
+  position: absolute;
+  height: 44px;
+}
+
+.button-container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  height: 32px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: -32px;
+  transition: top .3s;
+}
+
+.custom-button-wrapper {
+  box-sizing: border-box;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.custom-button {
+  background: linear-gradient(rgba(103,105,105,0.7),
+                              rgba(68,70,71,0.7));
+  border-radius: 16px;
+  font-size: 0px;
+  line-height: 32px;
+  pointer-events: initial;
+  white-space: nowrap;
+  margin: 0 2px;
+}
+
+.custom-button:hover {
+  background: linear-gradient(rgba(126, 199, 249,0.8),
+                            rgba(1, 153, 255,0.8));
+}
+
+.custom-button[active] {
+  background: #0199FF !important;
+}
+
+.custom-button-contents {
+  align-items: center;
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  pointer-events: none;
+  vertical-align: middle;
+}
+
+.custom-button-image {
+  width: 32px;
+}
+
+.custom-button-image .image {
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: cover;
+  height: 16px;
+  width: 20px;
+}
+
+.custom-button-text {
+  color: white;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  max-width: 0px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: all .2s;
+}
+
+.custom-button-text[enabled] {
+  max-width: 999px;
+  opacity: 1;
+  padding: 0 10px 0 0;
+  transition: all .2s;
+}
+
+.custom-button[active][hovered] .custom-button-image .image:not(.animating) {
+  background-image: -webkit-image-set(
+      url(expand-buttonx16.png) 1x,
+      url(expand-buttonx16.png) 2x
+  ) !important;
+}
+
+.custom-button[inactive] {
+  background: linear-gradient(rgba(103,105,105,0.25),
+                              rgba(68,70,71,0.25)) !important;
+}
+
+.custom-button[inactive] .custom-button-contents {
+  opacity: 0.25;
+}
+
+.custom-button[disabled] {
+  display: none;
+}
+
+.button-container.visible {
+  top: 12px;
+}
+
+.button-container.hide {
+  visibility: hidden;
+}
