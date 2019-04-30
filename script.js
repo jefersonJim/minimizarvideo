@@ -21,17 +21,12 @@ var interval = setInterval(function(){
   }
 },100)
 
-setTimeout(function(){
-	clearInterval(interval);
-},3000);
-
 	
 function addBtn(){
-	var i = 1;
 	document.querySelectorAll('video').forEach(function(video,index){
-		console.log(i+1)
 		var video_top = getOffset(video).top;
 		var video_left = getOffset(video).left;
+		console.log("teste")
 
 		var  minus  = 60;
 
@@ -40,7 +35,7 @@ function addBtn(){
 
 		var container = $(`
 			<div id="_v_`+index+`" class="container">
-				<div class="button-container" style="z-index:99;">
+				<div class="button-container" style="z-index:999999999999999;">
 					<div class="custom-button-wrapper">
 						<div class="custom-button" id="video-detach-button" aria-label="Detach button">
 							<div class="custom-button-contents custom-button-image">

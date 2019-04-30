@@ -2,7 +2,7 @@
 	"name":"Minimizar video",
 	"short_name":"Min Video",
 	"author":"Jeferson Inacio Macedo:< http://github.com/jefersonjim >",
-	"version":"1.2",
+	"version":"1.3",
 	"permissions":[
 		"tabs",
 		"activeTab"
@@ -21,7 +21,7 @@
 			"script.js"
 		],
 		"css":["style.css"],
-		"run_at":"document_end",
+		"run_at":"document_start",
 		"persistent":false
 	}],
 	"web_accessible_resources": [
