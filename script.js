@@ -15,18 +15,17 @@ var interval = setInterval(function(){
   times += 1
   if(document.querySelectorAll('video').length != 0){
   	clearInterval(interval);
-  	addBtn();
-  }else if(times == 30){
+  	setTimeout( addBtn(), 1000);
+  }else if(times == 100){
   	clearInterval(interval);
   }
 },100)
 
-	
 function addBtn(){
+	let isYoutube = (document.location.href.indexOf('youtube.com') !== -1)
 	document.querySelectorAll('video').forEach(function(video,index){
 		var video_top = getOffset(video).top;
 		var video_left = getOffset(video).left;
-		console.log("teste")
 
 		var  minus  = 60;
 
@@ -40,7 +39,7 @@ function addBtn(){
 						<div class="custom-button" id="video-detach-button" aria-label="Detach button">
 							<div class="custom-button-contents custom-button-image">
 								<div class="image" data-video="`+index+`">
-									<img style="width: 17px;" src="`+imgURL+`"/>
+									<img style="width: 14px; margin-top:-15px;" src="`+imgURL+`"/>
 								</div>
 							</div>
 							<div class="custom-button-contents custom-button-text"></div>
@@ -54,17 +53,19 @@ function addBtn(){
 		$("#_v_"+index).css({"top":video_top+"px", "left":video_left+ajust+"px"});
 
 		$( video ).hover(function() {
-		    var video_top = getOffset(video).top;
+				let ajustTop = (isYoutube ? 5 : 50);
+		    var video_top = getOffset(video).top+ajustTop;
 		    var video_left = getOffset(video).left;
-			var ajust = (video.offsetWidth/2)-minus;
-			$("#_v_"+index).css({"top":video_top+"px", "left":video_left+ajust+"px"});
+			  var ajust = (video.offsetWidth/2)-minus;
+			  $("#_v_"+index).css({"top":video_top+"px", "left":video_left+ajust+"px"});
 		    $("#_v_"+index+" .button-container").addClass("visible");
 		},function() {
-		  $("#_v_"+index+" .button-container").removeClass("visible");
+		    $("#_v_"+index+" .button-container").removeClass("visible");
 		});
 
 		$("#_v_"+index+" .button-container").hover(function() {
-		  var video_top = getOffset(video).top;
+			let ajustTop = (isYoutube ? 5 : 50);
+		  var video_top = getOffset(video).top+ajustTop;
 		  var video_left = getOffset(video).left;
 		  var ajust = (video.offsetWidth/2)-minus;
 		  $("#_v_"+index).css({"top":video_top+"px", "left":video_left+ajust+"px"});
