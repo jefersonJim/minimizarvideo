@@ -2,7 +2,7 @@
 	"name":"Minimizar video",
 	"short_name":"Min Video",
 	"author":"Jeferson Inacio Macedo:< http://github.com/jefersonjim >",
-	"version":"2.0",
+	"version":"2.1",
 	"permissions":[
 		"tabs",
 		"activeTab"
@@ -16,13 +16,13 @@
 	},
 	"content_scripts":[{
 		"matches": ["*://*.youtube.com/*","*://*.udemy.com/*", "*://*.twitter.com/*"],
+		"exclude_matches":["*://*.udemy.com/*/my-courses/*"], 
 		"js":[
 			"jquery-3.3.1.min.js",
 			"script.js"
 		],
 		"css":["style.css"],
-		"run_at":"document_start",
-		"persistent":false
+		"all_frames": true
 	}],
 	"web_accessible_resources": [
 	    "*.png"
