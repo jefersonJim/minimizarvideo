@@ -16,7 +16,6 @@
 	},
 	"content_scripts":[{
 		"matches": ["*://*.youtube.com/*","*://*.udemy.com/*", "*://*.twitter.com/*"],
-		"exclude_matches":["*://*.udemy.com/*/my-courses/*"], 
 		"js":[
 			"jquery-3.3.1.min.js",
 			"script.js"

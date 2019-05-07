@@ -8,13 +8,13 @@
   width: 68px;
   z-index: 2147483647;
 }
-.container {
+._mv_container {
   clip: rect(0px, 10000px, 44px, 0px);
   position: absolute;
   height: 44px;
 }
 
-.button-container {
+._mv_button-container {
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
@@ -26,13 +26,13 @@
   transition: top .3s;
 }
 
-.custom-button-wrapper {
+._mv_custom-button-wrapper {
   box-sizing: border-box;
   overflow: visible;
   pointer-events: none;
 }
 
-.custom-button {
+._mv_custom-button {
   background: linear-gradient(rgba(103,105,105,0.7),
                               rgba(68,70,71,0.7));
   border-radius: 16px;
@@ -43,16 +43,16 @@
   margin: 0 2px;
 }
 
-.custom-button:hover {
+._mv_custom-button:hover {
   background: linear-gradient(rgba(126, 199, 249,0.8),
                             rgba(1, 153, 255,0.8));
 }
 
-.custom-button[active] {
+._mv_custom-button[active] {
   background: #0199FF !important;
 }
 
-.custom-button-contents {
+._mv_custom-button-contents {
   align-items: center;
   display: inline-flex;
   height: 32px;
@@ -61,11 +61,11 @@
   vertical-align: middle;
 }
 
-.custom-button-image {
+._mv_custom-button-image {
   width: 32px;
 }
 
-.custom-button-image .image {
+._mv_custom-button-image ._mv_image {
   background-repeat: no-repeat;
   background-position: center left;
   background-size: cover;
@@ -73,7 +73,7 @@
   width: 20px;
 }
 
-.custom-button-text {
+._mv_custom-button-text {
   color: white;
   display: inline-block;
   font-size: 15px;
@@ -86,37 +86,37 @@
   transition: all .2s;
 }
 
-.custom-button-text[enabled] {
+._mv_custom-button-text[enabled] {
   max-width: 999px;
   opacity: 1;
   padding: 0 10px 0 0;
   transition: all .2s;
 }
 
-.custom-button[active][hovered] .custom-button-image .image:not(.animating) {
+._mv_custom-button[active][hovered] ._mv_custom-button-image ._mv_image:not(.animating) {
   background-image: -webkit-image-set(
       url(expand-buttonx16.png) 1x,
       url(expand-buttonx16.png) 2x
   ) !important;
 }
 
-.custom-button[inactive] {
+._mv_custom-button[inactive] {
   background: linear-gradient(rgba(103,105,105,0.25),
                               rgba(68,70,71,0.25)) !important;
 }
 
-.custom-button[inactive] .custom-button-contents {
+._mv_custom-button[inactive] ._mv_custom-button-contents {
   opacity: 0.25;
 }
 
-.custom-button[disabled] {
+._mv_custom-button[disabled] {
   display: none;
 }
 
-.button-container.visible {
+._mv_button-container.visible {
   top: 12px;
 }
 
-.button-container.hide {
+._mv_button-container.hide {
   visibility: hidden;
 }
